@@ -1,7 +1,14 @@
 import { api } from '../helpers/http';
 import type { Person, BaseResponse } from '../models/models';
 
-export const getPeople = () => api.get<Person[]>('/Person');
+type GetPeopleResponse = {
+  people: Person[];
+  success: boolean;
+  message: string;
+  responseCode: number;
+};
+
+export const getPeople = () => api.get<GetPeopleResponse>('/Person');
 export const getPersonByName = (name: string) => api.get<Person>(`/Person/${encodeURIComponent(name)}`);
 
 // Controller expects a raw string in body for create

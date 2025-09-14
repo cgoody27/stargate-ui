@@ -9,5 +9,12 @@ export default defineConfig({
     },
     server: {
         port: 3000,
+        proxy: {
+            '/Person': {
+                target: 'https://localhost:7204',
+                changeOrigin: true,
+                secure: false
+            }
+        }
     },
 })

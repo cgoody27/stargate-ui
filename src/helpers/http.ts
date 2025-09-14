@@ -1,15 +1,6 @@
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
-    readonly VITE_API_BASE_URL: string;
-    // add other env variables here if needed
-}
-
-interface ImportMeta {
-    readonly env: ImportMetaEnv;
-}
-
-const BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+const BASE_URL = import.meta.env.DEV ? '' : (import.meta.env.VITE_API_BASE_URL as string);
 
 export async function http<T>(input: RequestInfo | URL, init?: RequestInit): Promise<T> {
     const res = await fetch(input, {
