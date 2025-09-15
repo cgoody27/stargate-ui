@@ -17,4 +17,4 @@ export const createPerson = (name: string) =>
 
 // Controller expects a full Person body for update
 export const updatePerson = (person: Person) =>
-  api.put<BaseResponse>('/Person/update', person);
+  api.put<BaseResponse>('/Person/update', person);   
