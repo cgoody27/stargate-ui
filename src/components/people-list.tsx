@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getPeople, createPerson, updatePerson } from '../services/personApi';
 import type { Person } from '../models/models';
-import './people-list.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function PeopleList() {
